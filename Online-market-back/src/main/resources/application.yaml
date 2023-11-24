@@ -1,0 +1,31 @@
+config:
+  property:
+    path: "/home/polina/Programming/MyProjects/Online-market/Online-market-back/src/main/resources/db/migration/mongo/V1__Products_Collection.json"
+
+spring:
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: admin
+      username: root
+      password: secret
+      authentication-database: admin
+
+  datasource:
+    url: jdbc:postgresql://localhost:15432/postgres
+    username: user
+    password: secret
+    driver-class-name: org.postgresql.Driver
+
+  kafka:
+    bootstrap-servers: 192.168.0.2:9092
+
+
+
+

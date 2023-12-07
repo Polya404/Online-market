@@ -17,7 +17,6 @@ public class OrderService {
         order.setUser(orderDTO.getUser());
         order.setProductIds(orderDTO.getProductIds());
         orderRepository.save(order);
-        // save order in PostgreSQL
 
         // Отправьте сообщение в Kafka при создании заказа
          kafkaProducerService.sendOrderUpdate(order.toJson());

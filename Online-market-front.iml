@@ -3,8 +3,7 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$/Online-market-front">
-      <excludeFolder url="file://$MODULE_DIR$/Online-market-front/dist" />
-      <excludeFolder url="file://$MODULE_DIR$/Online-market-front/tmp" />
+      <excludeFolder url="file://$MODULE_DIR$/Online-market-front/build" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
   </component>

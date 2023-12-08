@@ -1,6 +1,6 @@
 package com.market.back;
 
-import com.market.back.services.DataMigrationService;
+import com.market.back.services.impl.DataMigrationService;
 import org.flywaydb.core.Flyway;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

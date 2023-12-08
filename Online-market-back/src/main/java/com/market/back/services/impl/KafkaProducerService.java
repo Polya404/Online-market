@@ -1,4 +1,4 @@
-package com.market.back.services;
+package com.market.back.services.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;

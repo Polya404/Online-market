@@ -1,4 +1,4 @@
-package com.market.back.services;
+package com.market.back.services.impl;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;

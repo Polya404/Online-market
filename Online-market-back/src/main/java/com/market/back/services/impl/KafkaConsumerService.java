@@ -1,4 +1,4 @@
-package com.market.back.services;
+package com.market.back.services.impl;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.kafka.annotation.KafkaListener;
@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class KafkaConsumerService {
 
-    private final ProductService productService;
+    private final ProductServiceImpl productService;
 
     @KafkaListener(topics = "order-updates")
     public void handleOrderUpdate(String orderJson) {

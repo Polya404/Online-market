@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 @EnableMongoRepositories
-public interface ProductRepositoryMongo extends MongoRepository<Product, Long> {
+public interface ProductRepositoryMongo extends MongoRepository<Product, String> {
 
 }

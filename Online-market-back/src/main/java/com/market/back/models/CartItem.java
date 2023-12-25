@@ -1,5 +1,6 @@
-package com.market.back.dto;
+package com.market.back.models;
 
+import com.market.back.models.categories.Products;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,6 +11,6 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CartItem {
-    private List<ProductDTO> products;
+    private List<Products> products;
     private Long quantity;
 }

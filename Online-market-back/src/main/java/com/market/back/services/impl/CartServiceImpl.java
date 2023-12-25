@@ -1,7 +1,8 @@
 package com.market.back.services.impl;
 
-import com.market.back.dto.CartItem;
-import com.market.back.dto.ProductDTO;
+import com.market.back.dto.CartItemDTO;
+import com.market.back.models.CartItem;
+import com.market.back.models.categories.Products;
 import com.market.back.services.CartService;
 import org.springframework.stereotype.Service;
 
@@ -9,17 +10,18 @@ import java.util.List;
 
 @Service
 public class CartServiceImpl implements CartService {
-    private CartItem cartItem;
-    private List<ProductDTO> products;
+    private static CartItem cartItem;
+    private static List<Products> products;
 
     @Override
-    public void addProduct(ProductDTO product) {
+    public CartItemDTO addProduct(Products product) {
         products.add(product);
         cartItem.setProducts(products);
+        return new CartItemDTO().fromEntity(cartItem);
     }
 
     @Override
-    public void deleteProduct(ProductDTO productDTO) {
-        products.remove(productDTO);
+    public void deleteProduct(Products product) {
+        products.remove(product);
     }
 }

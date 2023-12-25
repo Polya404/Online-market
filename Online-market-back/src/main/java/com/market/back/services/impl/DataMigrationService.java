@@ -1,8 +1,8 @@
 package com.market.back.services.impl;
 
-import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.market.back.models.Product;
+import com.google.gson.Gson;
+import com.market.back.models.categories.Products;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 import lombok.extern.log4j.Log4j2;
@@ -12,11 +12,12 @@ import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 
+import java.lang.reflect.Field;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
+import java.util.Set;
 
 @Service
 @RequiredArgsConstructor
@@ -36,21 +37,29 @@ public class DataMigrationService {
     @SneakyThrows
     public void insertDataFromFile() {
         String jsonData = Files.readString(Paths.get(path));
+        Gson gson = new Gson();
+        Map[] maps = gson.fromJson(jsonData, Map[].class);
 
-        List<Map<String, String>> data = objectMapper.readValue(jsonData, new TypeReference<>() {
-        });
-
-        List<Product> products = data.stream()
-                .map(map -> Product.builder().fields(map).build())
-                .filter(this::existsInDatabase)
-                .collect(Collectors.toList());
-
-        mongoTemplate.insert(products, "products");
+        Map<String, List<Map<String, String>>> map = maps[0];
+        Set<String> keySet = map.keySet();
+        for (String key : keySet) {
+            List<Map<String, String>> list = map.get(key);
+            for (Map<String, String> model : list){
+                Object o = objectMapper.convertValue(model, Class.forName("com.market.back.models.categories." + key));
+                if(!mongoTemplate.collectionExists(key) || !existsInDatabase((Products) o, key)){
+                    mongoTemplate.insert(o, key);
+                }
+            }
+        }
     }
 
-    private boolean existsInDatabase(Product product) {
-        Query query = new Query(Criteria.where("fields.id").is(product.getFields().get("id")));
-        return !mongoTemplate.exists(query, Product.class, "products");
+    @SneakyThrows
+    private boolean existsInDatabase(Products product, String collectionName) {
+        Field id = product.getClass().getDeclaredField("id");
+        id.setAccessible(true);
+        String value = (String) id.get(product);
+        Query query = new Query(Criteria.where("_id").is(value));
+        return mongoTemplate.exists(query, collectionName);
     }
 }
 

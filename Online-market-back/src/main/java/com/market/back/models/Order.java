@@ -26,9 +26,4 @@ public class Order {
     @ElementCollection
     private Set<Long> productIds;
 
-    @SneakyThrows
-    public String toJson() {
-        ObjectMapper objectMapper = new ObjectMapper();
-        return objectMapper.writeValueAsString(this);
-    }
 }

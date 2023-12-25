@@ -1,5 +1,6 @@
 package com.market.back.repositories;
 
+import com.market.back.dto.OrderDTO;
 import com.market.back.models.Order;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

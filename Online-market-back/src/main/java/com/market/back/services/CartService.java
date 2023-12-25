@@ -1,8 +1,9 @@
 package com.market.back.services;
 
-import com.market.back.dto.ProductDTO;
+import com.market.back.dto.CartItemDTO;
+import com.market.back.models.categories.Products;
 
 public interface CartService {
-    void addProduct(ProductDTO product);
-    void deleteProduct(ProductDTO productDTO);
+    CartItemDTO addProduct(Products product);
+    void deleteProduct(Products product);
 }

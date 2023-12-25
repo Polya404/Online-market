@@ -1,6 +1,11 @@
 CREATE TABLE IF NOT EXISTS t_user (
                                       id SERIAL PRIMARY KEY,
-                                      name VARCHAR(255)
+                                      username VARCHAR(255),
+                                      password VARCHAR(255),
+                                      full_name VARCHAR(255),
+                                      street VARCHAR(255),
+                                      city VARCHAR(255),
+                                      phone_number VARCHAR(255)
 );
 
 CREATE TABLE IF NOT EXISTS t_order (

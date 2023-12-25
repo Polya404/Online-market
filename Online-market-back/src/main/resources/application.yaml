@@ -26,6 +26,23 @@ spring:
   kafka:
     bootstrap-servers: 192.168.0.2:9092
 
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/
+#    prefix: /home/polina/Programming/MyProjects/Online-market/Online-market-back/src/main/resources/templates
+
+
+
+#  security:
+#    oauth2:
+#      client:
+#        registration:
+#          facebook:
+#          clientId: "715688400512285"
+#          clientSecret: "936bd8e2b2a96e9027076c2ae93d81ea"
+#          scope: email, public_profile
+
+
 
 
 

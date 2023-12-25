@@ -1,44 +1,54 @@
 [
   {
-    "id": 1,
-    "name": "Life of Pi",
-    "author": "Yann Martel",
-    "genre": "General and Literary Fiction",
-    "description": "ife of Pi tells the magical story of a young Indian, who finds himself shipwrecked and lost at sea in a large lifeboat.",
-    "category": "Book",
-    "price": 7.99
-  },
-  {
-    "id": 2,
-    "name": "Twilight",
-    "author": "Stephenie Meyer",
-    "genre": "Young Adult Fiction",
-    "description": "Twilight, by Stephenie Meyer, is a young adult adventure-romance about a teenage girl who falls in love with a vampire.",
-    "category": "Book",
-    "price": 6.99
-  },
-  {
-    "id": 3,
-    "name": "IronMan",
-    "description": "children's toy iron man",
-    "category": "Toys",
-    "price": 12
-  },
-  {
-    "id": 4,
-    "name": "Bed",
-    "description": "Double wooden bed",
-    "Manufacturer country": "Spain",
-    "category": "Household products",
-    "price": 1000
-  },
-  {
-    "id": 5,
-    "name": "Jacket",
-    "description": "Red winter jacket",
-    "Manufacturer country": "Italy",
-    "materials": "Fluff and feather",
-    "category": "Clothes",
-    "price": 200.99
+    "Book": [
+      {
+        "id": 1,
+        "name": "Life of Pi",
+        "author": "Yann Martel",
+        "genre": "General and Literary Fiction",
+        "description": "ife of Pi tells the magical story of a young Indian, who finds himself shipwrecked and lost at sea in a large lifeboat.",
+        "category": "Book",
+        "price": 7.99
+      },
+      {
+        "id": 2,
+        "name": "Twilight",
+        "author": "Stephenie Meyer",
+        "genre": "Young Adult Fiction",
+        "description": "Twilight, by Stephenie Meyer, is a young adult adventure-romance about a teenage girl who falls in love with a vampire.",
+        "category": "Book",
+        "price": 6.99
+      }
+    ],
+    "Toy": [
+      {
+        "id": 3,
+        "name": "IronMan",
+        "description": "children's toy iron man",
+        "category": "Toy",
+        "price": 12
+      }
+    ],
+    "Household": [
+      {
+        "id": 4,
+        "name": "Bed",
+        "description": "Double wooden bed",
+        "manufacturer country": "Spain",
+        "category": "Household",
+        "price": 1000
+      }
+    ],
+    "Clothes": [
+      {
+        "id": 5,
+        "name": "Jacket",
+        "description": "Red winter jacket",
+        "manufacturer country": "Italy",
+        "materials": "Fluff and feather",
+        "category": "Clothes",
+        "price": 200.99
+      }
+    ]
   }
 ]
